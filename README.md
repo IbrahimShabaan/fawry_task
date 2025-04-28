@@ -3,6 +3,23 @@ Q1_Screenshot
 
 <img width="730" alt="Image" src="https://github.com/user-attachments/assets/fcf7715b-90a5-4aca-983a-fc02fe0a8394" />
 
+
+1. Breakdown of how the script handles arguments and options:
+	•	The script checks if --help is given to show usage instructions.
+	•	It processes options (-n, -v) using getopts.
+	•	After that, it checks if the search string and filename are provided.
+	•	It uses grep to search and adjust the output based on the options.
+	•	The line shift $((OPTIND - 1)) removes the options from the argument list, so we can use the remaining arguments (search string and filename).
+
+2. Supporting regex or -i/-c/-l options:
+	•	To support regex, I would let users use patterns. The script would need to handle these patterns.
+	•	For -i (case-insensitive), I could make it default or allow users to toggle it.
+	•	For -c (count matches) or -l (list filenames), I would change the grep command to include these options.
+
+3. Hardest part of the script:
+	•	The hardest part was understanding getopts and how to use it. Once I practiced and understood how shift $((OPTIND - 1)) works, it got easier.
+
+
 ------------------------------------------------------
 ------------------------------------------------------
 ------------------------------------------------------
@@ -23,3 +40,6 @@ Q2_Screenshot
 <img width="1340" alt="Image" src="https://github.com/user-attachments/assets/993fa65c-bf2a-4da5-b094-3970d9413537" />
 <img width="1340" alt="Image" src="https://github.com/user-attachments/assets/8beae738-658d-4898-9ebc-0d39075db20d" />
 <img width="1105" alt="Image" src="https://github.com/user-attachments/assets/c6dba97d-75dd-49c2-acc2-e7d34d432673" />
+
+
+
